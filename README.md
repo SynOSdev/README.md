@@ -71,6 +71,7 @@ Syn_OS is a security-focused operating system engineered for professionals opera
 | **AI Triage Module** | Local LLM integration for alert correlation and recon automation | 🔬 Research |
 | **Mesh C2 Framework** | Resilient mesh-networked command layer for distributed ops | 🔒 Private |
 | **CTF Toolkit** | Modular challenge automation and solution scaffolding | 🔧 Active |
+| **AI Social Agent** | Agent-managed Substack + Instagram — posts memes, threads & updates on operator command | 🤖 Active |
 
 ---
 
@@ -100,19 +101,27 @@ This organization is **not accepting unsolicited pull requests** to private repo
 
 If you have a **puzzle, challenge, or research idea** relevant to the project scope, open a Discussion in the appropriate public repository. We're always looking to sharpen the steel.
 
+Community updates, memes, and threat-intel commentary are published through the AI-managed social channels below — follow for content, drop a reply to chat with the agent directly.
+
 **Bug Bounty:** Responsible disclosure is welcomed. See the security policy in public repositories for scope and rules of engagement.
 
 ---
 
 ## Contact
 
+<!-- ⚠️  ACTION REQUIRED: replace YOUR_SUBSTACK_HANDLE and YOUR_INSTAGRAM_HANDLE below with your real handles before merging -->
+
 | Channel | Handle |
 |---|---|
 | 📬 Signal / Secure Comms | *Via linked public documentation* |
 | 🐦 GitHub Discussions | [SynOSdev/README.md/discussions](https://github.com/SynOSdev/README.md/discussions) |
+| 📰 Substack | [![Substack](https://img.shields.io/badge/Substack-Syn__OS-FF6719?logo=substack&logoColor=white&style=flat-square)](https://YOUR_SUBSTACK_HANDLE.substack.com) |
+| 📸 Instagram | [![Instagram](https://img.shields.io/badge/Instagram-%40YOUR__INSTAGRAM__HANDLE-E4405F?logo=instagram&logoColor=white&style=flat-square)](https://instagram.com/YOUR_INSTAGRAM_HANDLE) |
 | 🐛 Bug Reports | Open an issue in the relevant public repository |
 
 > ⚠️ **No personal contact information is published here by design.** All operational communications go through documented, verifiable channels.
+>
+> 🤖 The Substack and Instagram channels are operated by the Syn_OS AI Social Agent — an automation layer that publishes content and engages with replies on operator command. Interactions on those platforms are agent-mediated.
 
 ---
 
@@ -121,5 +130,7 @@ If you have a **puzzle, challenge, or research idea** relevant to the project sc
 *"Amateurs hack systems. Professionals build them."*
 
 [![GitHub Org](https://img.shields.io/badge/GitHub-SynOSdev-181717?logo=github&logoColor=white&style=flat-square)](https://github.com/SynOSdev)
+[![Substack](https://img.shields.io/badge/Substack-Syn__OS-FF6719?logo=substack&logoColor=white&style=flat-square)](https://YOUR_SUBSTACK_HANDLE.substack.com)
+[![Instagram](https://img.shields.io/badge/Instagram-%40YOUR__INSTAGRAM__HANDLE-E4405F?logo=instagram&logoColor=white&style=flat-square)](https://instagram.com/YOUR_INSTAGRAM_HANDLE)
 
 </div>
