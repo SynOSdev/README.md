@@ -1,0 +1,111 @@
+# ~/.bashrc — Syn_OS Default Shell Configuration
+# Merged from hostconfig repo — deduplicated and upgraded
+
+# If not running interactively, don't do anything
+case $- in
+  *i*) ;;
+    *) return;;
+esac
+
+# ---------- History ----------
+HISTCONTROL=ignoreboth:erasedups
+HISTSIZE=10000
+HISTFILESIZE=20000
+HISTTIMEFORMAT="%F %T  "
+shopt -s histappend
+
+# ---------- Shell Options ----------
+shopt -s checkwinsize
+shopt -s globstar
+shopt -s cdspell
+shopt -s dirspell
+shopt -s autocd
+
+# ---------- Environment ----------
+export EDITOR="nano"
+export VISUAL="nano"
+export PAGER="less"
+export LESS="-RFX"
+export TERM="xterm-256color"
+export SYNOS_ENV="${SYNOS_ENV:-production}"
+export SYNOS_VERSION="post-v20"
+
+# ---------- Path ----------
+export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH"
+[ -d "$HOME/.cargo/bin" ] && export PATH="$HOME/.cargo/bin:$PATH"
+[ -d "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
+
+# ---------- Prompt ----------
+if [ "$(id -u)" -eq 0 ]; then
+  PS1='\[\033[01;31m\][synos-root]\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]# '
+else
+  PS1='\[\033[01;32m\][synos]\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+fi
+
+# ---------- Aliases — General ----------
+alias ll='ls -alFh --color=auto'
+alias la='ls -Ah --color=auto'
+alias l='ls -CFh --color=auto'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias df='df -h'
+alias du='du -h'
+alias free='free -h'
+alias mkdir='mkdir -pv'
+alias rm='rm -I'
+
+# ---------- Aliases — Git ----------
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git log --oneline --graph --decorate -20'
+alias gd='git diff'
+alias gb='git branch'
+alias gco='git checkout'
+
+# ---------- Aliases — Security ----------
+alias ports='ss -tulnp'
+alias listening='ss -lntp'
+alias myip='curl -s https://ifconfig.me'
+alias fw='sudo ufw status verbose'
+alias sshkeys='ssh-add -l'
+
+# ---------- Aliases — Syn_OS ----------
+alias synos-status='echo "Syn_OS $SYNOS_VERSION — $SYNOS_ENV"'
+alias synos-config='cat "${SYNOS_CONFIG_DIR:-$HOME/hostconfig}/bashrc"'
+
+# ---------- Functions ----------
+mkcd() { mkdir -p "$1" && cd "$1"; }
+extract() {
+  if [ -f "$1" ]; then
+    case "$1" in
+      *.tar.bz2) tar xjf "$1" ;;
+      *.tar.gz)  tar xzf "$1" ;;
+      *.bz2)     bunzip2 "$1" ;;
+      *.gz)      gunzip "$1" ;;
+      *.tar)     tar xf "$1" ;;
+      *.tbz2)    tar xjf "$1" ;;
+      *.tgz)     tar xzf "$1" ;;
+      *.zip)     unzip "$1" ;;
+      *.Z)       uncompress "$1" ;;
+      *.7z)      7z x "$1" ;;
+      *.xz)      xz -d "$1" ;;
+      *)         echo "'$1' cannot be extracted" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# ---------- Completions ----------
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
