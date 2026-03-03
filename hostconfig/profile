@@ -1,0 +1,31 @@
+# ~/.profile — Syn_OS Login Shell Environment
+# Merged from hostconfig repo — deduplicated and upgraded
+
+# Source bashrc if running bash
+if [ -n "$BASH_VERSION" ]; then
+  if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+  fi
+fi
+
+# ---------- Environment ----------
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export TZ="America/New_York"
+
+# ---------- XDG Directories ----------
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+# ---------- Path ----------
+if [ -d "$HOME/.local/bin" ]; then
+  PATH="$HOME/.local/bin:$PATH"
+fi
+if [ -d "$HOME/bin" ]; then
+  PATH="$HOME/bin:$PATH"
+fi
+
+# ---------- Security ----------
+umask 027
