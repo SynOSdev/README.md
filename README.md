@@ -109,14 +109,12 @@ Community updates, memes, and threat-intel commentary are published through the 
 
 ## Contact
 
-<!-- ⚠️  ACTION REQUIRED: replace YOUR_SUBSTACK_HANDLE and YOUR_INSTAGRAM_HANDLE below with your real handles before merging -->
-
 | Channel | Handle |
 |---|---|
 | 📬 Signal / Secure Comms | *Via linked public documentation* |
 | 🐦 GitHub Discussions | [SynOSdev/README.md/discussions](https://github.com/SynOSdev/README.md/discussions) |
-| 📰 Substack | [![Substack](https://img.shields.io/badge/Substack-Syn__OS-FF6719?logo=substack&logoColor=white&style=flat-square)](https://YOUR_SUBSTACK_HANDLE.substack.com) |
-| 📸 Instagram | [![Instagram](https://img.shields.io/badge/Instagram-%40YOUR__INSTAGRAM__HANDLE-E4405F?logo=instagram&logoColor=white&style=flat-square)](https://instagram.com/YOUR_INSTAGRAM_HANDLE) |
+| 📰 Substack | [![Substack](https://img.shields.io/badge/Substack-shelldiablo33-FF6719?logo=substack&logoColor=white&style=flat-square)](https://shelldiablo33.substack.com) |
+| 📸 Instagram | [![Instagram](https://img.shields.io/badge/Instagram-%40syn.os-E4405F?logo=instagram&logoColor=white&style=flat-square)](https://instagram.com/syn.os) |
 | 🐛 Bug Reports | Open an issue in the relevant public repository |
 
 > ⚠️ **No personal contact information is published here by design.** All operational communications go through documented, verifiable channels.
@@ -130,7 +128,7 @@ Community updates, memes, and threat-intel commentary are published through the 
 *"Amateurs hack systems. Professionals build them."*
 
 [![GitHub Org](https://img.shields.io/badge/GitHub-SynOSdev-181717?logo=github&logoColor=white&style=flat-square)](https://github.com/SynOSdev)
-[![Substack](https://img.shields.io/badge/Substack-Syn__OS-FF6719?logo=substack&logoColor=white&style=flat-square)](https://YOUR_SUBSTACK_HANDLE.substack.com)
-[![Instagram](https://img.shields.io/badge/Instagram-%40YOUR__INSTAGRAM__HANDLE-E4405F?logo=instagram&logoColor=white&style=flat-square)](https://instagram.com/YOUR_INSTAGRAM_HANDLE)
+[![Substack](https://img.shields.io/badge/Substack-shelldiablo33-FF6719?logo=substack&logoColor=white&style=flat-square)](https://shelldiablo33.substack.com)
+[![Instagram](https://img.shields.io/badge/Instagram-%40syn.os-E4405F?logo=instagram&logoColor=white&style=flat-square)](https://instagram.com/syn.os)
 
 </div>
