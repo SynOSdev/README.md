@@ -76,7 +76,7 @@
       ]
     }
   },
-  "postCreateCommand": "echo '[ -f ~/work/hostconfig/bashrc ] && source ~/work/hostconfig/bashrc' >> ~/.bashrc && echo 'Syn_OS dev environment ready.'",
+  "postCreateCommand": "echo '[ -f ${containerWorkspaceFolder}/hostconfig/bashrc ] && source ${containerWorkspaceFolder}/hostconfig/bashrc' >> ~/.bashrc && echo 'Syn_OS dev environment ready.'",
   "remoteUser": "synos",
   "containerEnv": {
     "SYNOS_ENV": "development",

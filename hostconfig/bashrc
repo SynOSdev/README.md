@@ -76,7 +76,7 @@ alias sshkeys='ssh-add -l'
 
 # ---------- Aliases — Syn_OS ----------
 alias synos-status='echo "Syn_OS $SYNOS_VERSION — $SYNOS_ENV"'
-alias synos-config='cat ~/work/hostconfig/bashrc'
+alias synos-config='cat "${SYNOS_CONFIG_DIR:-$HOME/hostconfig}/bashrc"'
 
 # ---------- Functions ----------
 mkcd() { mkdir -p "$1" && cd "$1"; }
