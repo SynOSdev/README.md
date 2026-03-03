@@ -1,0 +1,27 @@
+# ~/.nanorc — Syn_OS Editor Configuration
+# Merged from hostconfig repo — deduplicated and upgraded
+
+# ---------- Display ----------
+set linenumbers
+set constantshow
+set softwrap
+set atblanks
+set mouse
+
+# ---------- Editing ----------
+set tabsize 2
+set tabstospaces
+set autoindent
+set trimblanks
+
+# ---------- Search ----------
+set casesensitive
+set regexp
+
+# ---------- Backup ----------
+set backup
+set backupdir "~/.nano/backups"
+
+# ---------- Syntax Highlighting ----------
+include "/usr/share/nano/*.nanorc"
+include "/usr/share/nano/extra/*.nanorc"

@@ -14,7 +14,8 @@
 [![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen?style=flat-square)](https://github.com/SynOSdev)
 [![License](https://img.shields.io/badge/License-Proprietary-red?style=flat-square)](https://github.com/SynOSdev)
 [![Security](https://img.shields.io/badge/Focus-Offensive%20%26%20Defensive%20Security-blueviolet?style=flat-square)](https://github.com/SynOSdev)
-[![Docs](https://img.shields.io/badge/Docs-synos--public--docs-informational?style=flat-square&logo=gitbook)](https://github.com/TLimoges33/synos-public-docs)
+[![Version](https://img.shields.io/badge/Version-Post%20v20-blue?style=flat-square)](https://github.com/SynOSdev)
+[![Codespaces](https://img.shields.io/badge/Codespaces-Ready-2088FF?style=flat-square&logo=github)](https://github.com/SynOSdev/README.md)
 
 </div>
 
@@ -38,6 +39,7 @@ Syn_OS is a security-focused operating system engineered for professionals opera
 | 🌐 Network Ops | Mesh networking support, covert channel analysis |
 | 🔬 Reverse Engineering | Binary analysis workflows, malware research environment |
 | 📡 SIGINT / OSINT | Modular collection and correlation pipelines |
+| 📱 Mobile Operations | Moto Z Play ADB bridge, mobile mesh networking, field deployment |
 
 ---
 
@@ -59,6 +61,7 @@ Syn_OS is a security-focused operating system engineered for professionals opera
 [![Nix](https://img.shields.io/badge/-Nix%2FNixOS-5277C3?logo=nixos&logoColor=white&style=flat-square)](https://nixos.org)
 [![QEMU](https://img.shields.io/badge/-QEMU%2FKVM-FF6600?logo=qemu&logoColor=white&style=flat-square)](https://qemu.org)
 [![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white&style=flat-square)](https://git-scm.com)
+[![Codespaces](https://img.shields.io/badge/-Codespaces-2088FF?logo=github&logoColor=white&style=flat-square)](https://github.com/features/codespaces)
 
 ---
 
@@ -67,11 +70,68 @@ Syn_OS is a security-focused operating system engineered for professionals opera
 | Project | Description | Status |
 |---|---|---|
 | **Syn_OS Core** | Base OS image — hardened kernel, custom init, toolchain | 🔧 Beta |
-| **SynOS Public Docs** | Official documentation and public-facing architecture notes | ✅ Live |
+| **Host Config** | Merged host configuration — system defaults, shell, networking | ✅ Integrated |
+| **Mobile Bridge** | Moto Z Play ADB integration and mobile mesh networking | 🔬 Research |
 | **AI Triage Module** | Local LLM integration for alert correlation and recon automation | 🔬 Research |
 | **Mesh C2 Framework** | Resilient mesh-networked command layer for distributed ops | 🔒 Private |
 | **CTF Toolkit** | Modular challenge automation and solution scaffolding | 🔧 Active |
-| **AI Social Agent** | Agent-managed Substack + Instagram — posts memes, threads & updates on operator command | 🤖 Active |
+
+---
+
+## Post-v20 Research: Mobile System Connection & Development
+
+> Full research notes: [`docs/post-v20-mobile-research.md`](docs/post-v20-mobile-research.md)
+
+The post-v20 milestone focuses on mobile-first field deployment using the **Moto Z Play** as the primary mobile development and operations platform. This research covers ADB connectivity, USB tethering for Codespace access, mobile mesh networking, and offline-capable development workflows for solo-dev field operations.
+
+### Key Research Areas
+
+| Area | Description |
+|---|---|
+| **ADB Bridge** | Android Debug Bridge configuration for Moto Z Play → Syn_OS host |
+| **USB Tethering** | Mobile hotspot and USB tethering for Codespace connectivity in the field |
+| **Termux Integration** | On-device terminal environment for emergency ops when laptop is unavailable |
+| **Offline Sync** | Git bundle workflows for air-gapped development and later push |
+| **Moto Mod Support** | Research into Moto Mod hardware extensions for field sensor integration |
+| **Battery Management** | Power-optimized development workflow for extended field sessions |
+
+---
+
+## Host Configuration (Merged)
+
+> Full config files: [`hostconfig/`](hostconfig/)
+> Configuration audit: [`docs/config-audit-report.md`](docs/config-audit-report.md)
+
+The `hostconfig/` directory contains the merged and deduplicated host configuration for Syn_OS systems. These are the default system configs previously maintained in a separate repository, now integrated into the master repo for single-source management.
+
+```
+hostconfig/
+├── bashrc              # Shell configuration and aliases
+├── profile             # Login shell environment
+├── ssh_config          # SSH client hardened defaults
+├── sshd_config         # SSH daemon hardened configuration
+├── gitconfig           # Git configuration and aliases
+├── tmux.conf           # Terminal multiplexer settings
+├── nanorc              # Editor configuration
+├── hosts               # Static host entries
+├── resolv.conf         # DNS resolver configuration
+├── sysctl.conf         # Kernel parameter tuning
+├── ufw-rules           # Firewall rule set
+└── network-interfaces  # Network interface configuration
+```
+
+---
+
+## Codespace & Workspace Configuration
+
+This repository is **Codespace-ready** with Syn_OS defaults pre-configured. Open in Codespaces for an instant development environment with all tools pre-installed.
+
+[![Open in Codespaces](https://img.shields.io/badge/Open%20in-Codespaces-2088FF?style=for-the-badge&logo=github)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=SynOSdev/README.md)
+
+- **Dev container**: Debian-based with security tooling pre-installed
+- **VS Code settings**: Syn_OS workspace defaults applied automatically
+- **Extensions**: Security-focused extension pack included
+- **Shell**: Bash with Syn_OS aliases and prompt
 
 ---
 
@@ -92,6 +152,36 @@ Syn_OS is a security-focused operating system engineered for professionals opera
 - **Reproducibility** — Builds are deterministic; any deployment can be validated against a known-good state.
 - **Separation of Concerns** — Red-team tooling is containerized and isolated from defensive instrumentation.
 - **No Telemetry** — No data leaves the system without explicit operator action.
+- **Mobile-Ready** — Field-deployable workflows that function over cellular/tethered connections.
+
+---
+
+## Repository Structure
+
+```
+.
+├── README.md                          # This file — project overview
+├── .devcontainer/
+│   └── devcontainer.json              # Codespace / dev container configuration
+├── .vscode/
+│   └── settings.json                  # Syn_OS workspace defaults
+├── docs/
+│   ├── post-v20-mobile-research.md    # Moto Z Play & mobile dev research
+│   └── config-audit-report.md         # 30-point configuration audit
+└── hostconfig/
+    ├── bashrc                         # Shell configuration
+    ├── profile                        # Login environment
+    ├── ssh_config                     # SSH client config
+    ├── sshd_config                    # SSH daemon config
+    ├── gitconfig                      # Git defaults
+    ├── tmux.conf                      # Tmux configuration
+    ├── nanorc                         # Editor config
+    ├── hosts                          # Static hosts
+    ├── resolv.conf                    # DNS resolver
+    ├── sysctl.conf                    # Kernel tuning
+    ├── ufw-rules                      # Firewall rules
+    └── network-interfaces             # Network config
+```
 
 ---
 
@@ -99,27 +189,9 @@ Syn_OS is a security-focused operating system engineered for professionals opera
 
 This organization is **not accepting unsolicited pull requests** to private repositories at this time. Public repositories may accept contributions — see `CONTRIBUTING.md` in each repo.
 
-If you have a **puzzle, challenge, or research idea** relevant to the project scope, open a Discussion in the appropriate public repository. We're always looking to sharpen the steel.
-
-Community updates, memes, and threat-intel commentary are published through the AI-managed social channels below — follow for content, drop a reply to chat with the agent directly.
+If you have a **puzzle, challenge, or research idea** relevant to the project scope, open a Discussion in the appropriate public repository.
 
 **Bug Bounty:** Responsible disclosure is welcomed. See the security policy in public repositories for scope and rules of engagement.
-
----
-
-## Contact
-
-| Channel | Handle |
-|---|---|
-| 📬 Signal / Secure Comms | *Via linked public documentation* |
-| 🐦 GitHub Discussions | [SynOSdev/README.md/discussions](https://github.com/SynOSdev/README.md/discussions) |
-| 📰 Substack | [![Substack](https://img.shields.io/badge/Substack-shelldiablo33-FF6719?logo=substack&logoColor=white&style=flat-square)](https://shelldiablo33.substack.com) |
-| 📸 Instagram | [![Instagram](https://img.shields.io/badge/Instagram-%40syn.os-E4405F?logo=instagram&logoColor=white&style=flat-square)](https://instagram.com/syn.os) |
-| 🐛 Bug Reports | Open an issue in the relevant public repository |
-
-> ⚠️ **No personal contact information is published here by design.** All operational communications go through documented, verifiable channels.
->
-> 🤖 The Substack and Instagram channels are operated by the Syn_OS AI Social Agent — an automation layer that publishes content and engages with replies on operator command. Interactions on those platforms are agent-mediated.
 
 ---
 
@@ -128,7 +200,5 @@ Community updates, memes, and threat-intel commentary are published through the 
 *"Amateurs hack systems. Professionals build them."*
 
 [![GitHub Org](https://img.shields.io/badge/GitHub-SynOSdev-181717?logo=github&logoColor=white&style=flat-square)](https://github.com/SynOSdev)
-[![Substack](https://img.shields.io/badge/Substack-shelldiablo33-FF6719?logo=substack&logoColor=white&style=flat-square)](https://shelldiablo33.substack.com)
-[![Instagram](https://img.shields.io/badge/Instagram-%40syn.os-E4405F?logo=instagram&logoColor=white&style=flat-square)](https://instagram.com/syn.os)
 
 </div>
